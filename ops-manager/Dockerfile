@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
 ENV OPS_MGR_VERSION=4.0.13.50537.20190703T1029Z-1
-RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3128";' | tee /etc/apt/apt.conf.d/01proxy
+#RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3128";' | tee /etc/apt/apt.conf.d/01proxy
 
 RUN apt-get update 
 RUN apt-get install -y wget nano curl libsasl2-2 ca-certificates libsnmp30 libgssapi-krb5-2 libkrb5-dbg libldap-2.4-2 libpcap0.8 openssl \
