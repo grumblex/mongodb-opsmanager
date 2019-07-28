@@ -28,7 +28,7 @@ you could simply link a database to the instance.
 ```bash
 docker run --name mongo  -d mongo:4
 docker run -d -t \
-  --name mongodb-opsmgr \
+  --name opsmanager \
   --link mongo \
   grumblex/opsmanager
 ```
@@ -36,7 +36,7 @@ docker run -d -t \
 ```bash
 docker run -d \
   --name mongodb-opsmgr \
-  -v /home/user/ops-manager/conf/app.properties:/opt/mongodb/mms/conf/conf-mms.properties \
+  -v /home/user/ops-manager/conf/app.properties:/opt/mongodb/mms/conf/conf-mms.properties  \
   grumblex/opsmanager
 ```
 
