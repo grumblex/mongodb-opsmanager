@@ -9,14 +9,14 @@ deployments are possible. Please consult [documentation](#official-documentation
 
 ## Version
 
-1. Latest Version: 2.0.2.337-1
+1. Latest Version: 4.0.13.50537.20190703T1029Z-1
 
 ## Getting Started
 
 ### Get the image
 
 ```bash
-docker pull gradecam/mongodb-ops-manager
+docker pull grumblex/opsmanager
 ```
 
 ### Configuration
@@ -26,18 +26,18 @@ you could simply link a database to the instance.
 
 1. A simple linked deployment:
 ```bash
-docker run --name opsmgr-appdb -d mongo:3
-docker run -d \
+docker run --name mongo  -d mongo:4
+docker run -d -t \
   --name mongodb-opsmgr \
-  --link opsmgr-appdb:db \
-  gradecam/mongodb-ops-manager
+  --link mongo \
+  grumblex/opsmanager
 ```
 1. Provide your own properties file with a custom config
 ```bash
 docker run -d \
   --name mongodb-opsmgr \
-  -v /home/user/ops-manager/custom-app.properties:/opt/mongodb/mms/conf/conf-mms.properties \
-  gradecam/mongodb-ops-manager
+  -v /home/user/ops-manager/conf/app.properties:/opt/mongodb/mms/conf/conf-mms.properties \
+  grumblex/opsmanager
 ```
 
 ### Connecting to Ops Manager
