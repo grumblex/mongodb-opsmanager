@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- (C) Copyright 2012, MongoDB, Inc. -->
+
+<configuration>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log_path}-access.log</file>
+        <encoder class="com.xgen.svc.mms.util.HeaderPatternLayoutEncoder$Access">
+            <pattern>combined</pattern>
+        </encoder>
+        <!-- Rollover the logs once per day, keep 30 days, compressed -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log_path}-access.%d{yyyyMMdd}.log.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender-ref ref="FILE" />
+
+</configuration>

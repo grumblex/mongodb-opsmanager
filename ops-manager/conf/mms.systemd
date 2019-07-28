@@ -1,0 +1,17 @@
+[Unit]
+Description=MongoDB Ops Manager
+After=network.target
+
+[Service]
+Type=simple
+TimeoutStartSec=20min
+RemainAfterExit=True
+ExecStart=/opt/mongodb/mms/bin/mongodb-mms start
+ExecStop=/opt/mongodb/mms/bin/mongodb-mms stop
+User=root
+# total threads (user+kernel)
+TasksMax=infinity
+TasksAccounting=false
+
+[Install]
+WantedBy=default.target
