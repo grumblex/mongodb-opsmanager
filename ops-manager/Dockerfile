@@ -17,8 +17,8 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /*.deb
 #COPY mongodb-mms_4.0.13.50537.20190703T1029Z-1_x86_64.deb /tmp/
 #RUN dpkg --install --no-triggers /tmp/mongodb-mms_4.0.13.50537.20190703T1029Z-1_x86_64.deb
 
-#COPY conf-mms.properties /opt/mongodb/mms/conf/conf-mms.properties
-COPY docker-entrypoint.sh /entrypoint.sh
+COPY ops-manager/conf-mms.properties /opt/mongodb/mms/conf/conf-mms.properties
+COPY ops-manager/docker-entrypoint.sh /entrypoint.sh
 VOLUME /etc/mongodb-mms /opt/mongodb/mms/conf /opt/mongodb/mms/logs
 
 
