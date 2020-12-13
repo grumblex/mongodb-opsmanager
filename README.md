@@ -9,7 +9,7 @@ deployments are possible. Please consult [documentation](#official-documentation
 
 ## Version
 
-1. Latest Version: 4.0.13.50537.20190703T1029Z-1
+1. Latest Version: 4.0.14.50550.20190730T1610Z-1
 
 ## Getting Started
 
